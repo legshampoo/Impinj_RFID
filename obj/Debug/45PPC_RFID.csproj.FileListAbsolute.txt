@@ -1,0 +1,16 @@
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\obj\Debug\_45PPC_RFID.Application.resources
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\obj\Debug\_45PPC_RFID.Properties.Resources.resources
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\obj\Debug\45PPC_RFID.csproj.GenerateResource.Cache
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\bin\Debug\45PPC_RFID.exe.config
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\bin\Debug\45PPC_RFID.exe
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\bin\Debug\45PPC_RFID.pdb
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\bin\Debug\Impinj.OctaneSdk.dll
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\bin\Debug\LLRP.Impinj.dll
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\bin\Debug\LLRP.dll
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\bin\Debug\Impinj.OctaneSdk.pdb
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\bin\Debug\Impinj.OctaneSdk.xml
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\bin\Debug\LLRP.Impinj.pdb
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\bin\Debug\LLRP.pdb
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\obj\Debug\45PPC_RFID.exe
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\obj\Debug\45PPC_RFID.pdb
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\obj\Debug\45PPC_RFID.csprojResolveAssemblyReference.cache
