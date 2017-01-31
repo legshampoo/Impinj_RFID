@@ -14,3 +14,4 @@ D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\bin\Debug\LLRP.pdb
 D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\obj\Debug\45PPC_RFID.exe
 D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\obj\Debug\45PPC_RFID.pdb
 D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\obj\Debug\45PPC_RFID.csprojResolveAssemblyReference.cache
+D:\PROJECTS\ParkPlace\dev\sandbox\45PPC_RFID\45PPC_RFID\obj\Debug\_45PPC_RFID.TagWriter.resources

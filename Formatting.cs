@@ -10,6 +10,8 @@ namespace _45PPC_RFID
 {
     class Formatting
     {
+        //static string rawTagDisplay = null;
+
         public static string FormatReaderInfo(ImpinjReader reader, FeatureSet features, Settings settings, Status status)
         {
             string modelName = features.ModelName;
@@ -57,6 +59,7 @@ namespace _45PPC_RFID
             String peakRSSI = tag.PeakRssiInDbm.ToString();
 
             String tagInfo =
+            "-------------------------------------" + Environment.NewLine + 
             "TAG DETECTED: " + Environment.NewLine + Environment.NewLine +
             "EPC: " + Environment.NewLine +
             epc + Environment.NewLine + Environment.NewLine +
@@ -68,7 +71,7 @@ namespace _45PPC_RFID
             "CRC: " + crc + Environment.NewLine +
             "GPS: " + gps + Environment.NewLine +
             "Peak RSSI: " + peakRSSI + Environment.NewLine;
-
+            
             return tagInfo;
         }
 

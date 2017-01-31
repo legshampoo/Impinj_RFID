@@ -64,8 +64,15 @@
     <Compile Include="Reader.cs" />
     <Compile Include="SolutionConstants.cs" />
     <Compile Include="TagObject.cs" />
+    <Compile Include="TagWriter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TagWriter.Designer.cs">
+      <DependentUpon>TagWriter.cs</DependentUpon>
+    </Compile>
     <Compile Include="TCPClientAsync.cs" />
     <Compile Include="TCPClient.cs" />
+    <Compile Include="Writer.cs" />
     <EmbeddedResource Include="Application.resx">
       <DependentUpon>Application.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,6 +86,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TagWriter.resx">
+      <DependentUpon>TagWriter.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

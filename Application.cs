@@ -12,10 +12,11 @@ namespace _45PPC_RFID
 {
     public partial class Application : Form
     {
-        Reader r = new Reader(SolutionConstants.ReaderHostname);
+        public Reader r = new Reader(SolutionConstants.ReaderHostname);
         public List<TagObject> tagObjects = new List<TagObject>();
         //public TCPClient tcpClient;
         public TCPClient tcpClient;
+        public TagWriter tagWriter = new TagWriter();
 
         public Application()
         {
@@ -60,6 +61,14 @@ namespace _45PPC_RFID
         private void Application_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void TagWriterButton_Click(object sender, EventArgs e)
+        {
+            //opens up the tag writer window
+            tagWriter = new TagWriter();
+            tagWriter.Show();
+           
         }
     }
 }

@@ -10,7 +10,7 @@ namespace _45PPC_RFID
 {
     public class Reader
     {
-        ImpinjReader reader = new ImpinjReader();
+        public ImpinjReader reader = new ImpinjReader();
         public Status status;
         FeatureSet features;
         Settings settings;
@@ -22,6 +22,7 @@ namespace _45PPC_RFID
         {
             Address = _address;
             reader.TagsReported += EventHandlers.OnTagsReported;
+            reader.TagOpComplete += EventHandlers.OnTagOpComplete;
             this.timer.AutoReset = false;
             this.timer.Elapsed += TimerElapsed;
         }

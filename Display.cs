@@ -11,6 +11,7 @@ namespace _45PPC_RFID
     static class Display
     {
         delegate void UpdateReaderInfoCallback(string text);
+        static TextBox rawTagConsole = Program.App.Controls["MainPanel"].Controls["TagConsole"] as TextBox;
 
         public static void UpdateReaderInfo(string s)
         {
@@ -57,16 +58,17 @@ namespace _45PPC_RFID
 
         public static void UpdateTagConsole(string s)
         {
-            TextBox txt = Program.App.Controls["MainPanel"].Controls["TagConsole"] as TextBox;
-
-            if (txt.InvokeRequired)
+            //TextBox txt = Program.App.Controls["MainPanel"].Controls["TagConsole"] as TextBox;
+            
+            if (rawTagConsole.InvokeRequired)
             {
                 UpdateTagConsoleCallback callback = new UpdateTagConsoleCallback(UpdateTagConsole);
                 Program.App.Invoke(callback, new Object[] { s });
             }
             else
             {
-                txt.Text = s;
+                //txt.Text = s;
+                rawTagConsole.AppendText(s);
             }
         }
 

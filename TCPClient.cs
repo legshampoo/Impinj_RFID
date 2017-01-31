@@ -49,9 +49,24 @@ namespace _45PPC_RFID
 
         public void Send(string message)
         {
-            Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
-            stream.Write(data, 0, data.Length);
-            System.Diagnostics.Debug.WriteLine("TCP: " + message);
+            try
+            {
+                Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
+                stream.Write(data, 0, data.Length);
+                System.Diagnostics.Debug.WriteLine("TCP: " + message);
+            }
+            catch (ArgumentNullException e)
+            {
+                System.Diagnostics.Debug.WriteLine("ArgumentNullException: {0}", e);
+            }
+            catch (SocketException e)
+            {
+                System.Diagnostics.Debug.WriteLine("SocketException: {0}", e);
+            }
+            catch (System.NullReferenceException e)
+            {
+                System.Diagnostics.Debug.WriteLine("NullReferenceException: {0}", e);
+            }
         }
     }
 }
