@@ -42,7 +42,9 @@ namespace _45PPC_RFID
 
                 Display.UpdateTag(this);
 
-                Program.App.tcpClient.Send(Epc + ": ALIVE");
+                string message = "{\"tag\":" + Epc + ", \"status\":\"true\"}";
+                Program.App.tcpClient.Send(message);
+                //Program.App.tcpClient.Send(Epc + ": ALIVE");
             }
             else
             {
@@ -62,7 +64,9 @@ namespace _45PPC_RFID
                 System.Diagnostics.Debug.WriteLine(Epc + " DEAD");
                 Display.UpdateTag(this);
 
-                Program.App.tcpClient.Send(Epc + " DEAD");
+                string message = "{\"tag\": " + Epc.ToString() + ", \"status\": \"false\"}";
+                Program.App.tcpClient.Send(message);
+                //Program.App.tcpClient.Send(Epc + " DEAD");
             }
             else
             {

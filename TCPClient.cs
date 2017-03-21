@@ -29,7 +29,8 @@ namespace _45PPC_RFID
 
                 stream = client.GetStream();
 
-                string message = "RFID Reader attempting to establish connection...";
+                //string message = "RFID Reader attempting to establish connection...";
+                string message = "{\"message\": \"RFID establishing connection\"}";
                 Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
 
                 Send(message);
