@@ -108,10 +108,7 @@ namespace _45PPC_RFID
 			tcpTimer.Stop();
 			tcpTimer.Start();
 			System.Diagnostics.Debug.WriteLine("CHECKING TCP SERVER CONNECTION...");
-			//bool recentlyConnected = client.Connected;
-			
-			//System.Diagnostics.Debug.WriteLine("TCP SERVER RECENTLY CONNECTED: " + isConnected);
-
+		
 			try
 			{
 				if (stream.CanWrite)

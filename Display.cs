@@ -73,7 +73,7 @@ namespace _45PPC_RFID
                 Program.App.Invoke(callback, new Object[] { s });
             }
             else
-            {
+            {  
                 //txt.Text = s;
                 rawTagConsole.AppendText(s);
             }

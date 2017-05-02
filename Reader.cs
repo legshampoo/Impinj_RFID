@@ -32,7 +32,6 @@ namespace _45PPC_RFID
 			System.Diagnostics.Debug.WriteLine("Attempting to connect to RFID... ");
 			try
             {
-                //System.Diagnostics.Debug.WriteLine("Connecting to reader... ");
                 System.Diagnostics.Debug.WriteLine("RFID Hostname: " + Address);
 
                 reader.Connect(Address);
@@ -138,7 +137,6 @@ namespace _45PPC_RFID
 				else
 				{
 					System.Diagnostics.Debug.WriteLine("RFID IS NOT CONNECTED, Will attempt to reconnect RFID...");
-					//Connect();
 					isConnected = false;
 				}
 			}
