@@ -41,16 +41,23 @@ namespace _45PPC_RFID
             }
             else
             {
-                if (reader.status.IsConnected)
-                {
-                    btn.Text = "Connected!";
-                    btn.BackColor = System.Drawing.Color.LightGreen;
-                }
-                else
-                {
-                    btn.Text = "Connect";
-                    btn.BackColor = System.Drawing.Color.PaleVioletRed;
-                }
+				try
+				{
+					if (reader.status.IsConnected)
+					{
+						btn.Text = "Connected!";
+						btn.BackColor = System.Drawing.Color.LightGreen;
+					}
+					else
+					{
+						btn.Text = "Connect";
+						btn.BackColor = System.Drawing.Color.PaleVioletRed;
+					}
+				}catch(Exception err)
+				{
+					System.Diagnostics.Debug.WriteLine(err.Message);
+				}
+                
             }
         }
 

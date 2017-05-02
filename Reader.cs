@@ -29,31 +29,37 @@ namespace _45PPC_RFID
 
         public void Connect()
         {
-            try
+			System.Diagnostics.Debug.WriteLine("Attempting to connect to RFID... ");
+			try
             {
-                System.Diagnostics.Debug.WriteLine("Connecting to reader... ");
-                System.Diagnostics.Debug.WriteLine("Hostname: " + Address);
+                //System.Diagnostics.Debug.WriteLine("Connecting to reader... ");
+                System.Diagnostics.Debug.WriteLine("RFID Hostname: " + Address);
 
                 reader.Connect(Address);
                 status = reader.QueryStatus();
                 
                 if (status.IsConnected)
                 {
-                    System.Diagnostics.Debug.WriteLine("Reader Connected");
+                    System.Diagnostics.Debug.WriteLine("RFID Reader Connected");
                     UpdateReaderSettings();
-                    RefreshReaderDisplay();
-                    reader.Start();
+					RefreshReaderDisplay();
+					reader.Start();
                     System.Diagnostics.Debug.WriteLine("Reader Ready...");
-                    this.CheckConnection();  //starts the connection monitor
-                }
+					//this.CheckConnection();  //starts the connection monitor
+				}
+				else
+				{
+					System.Diagnostics.Debug.WriteLine("Connect to RFID reader failed...");
+				}
+				
             }
             catch (OctaneSdkException err)
             {
-                System.Diagnostics.Debug.WriteLine("Octane SDK exception: " + err.Message);
+				System.Diagnostics.Debug.WriteLine("Octane SDK exception: " + err.Message);
             }
             catch (Exception err)
             {
-                System.Diagnostics.Debug.WriteLine("Exception: " + err.Message);
+				System.Diagnostics.Debug.WriteLine("Exception: " + err.Message);
             }
         }
 
@@ -90,39 +96,70 @@ namespace _45PPC_RFID
 
             try
             {
-                features = reader.QueryFeatureSet();
+				features = reader.QueryFeatureSet();
                 status = reader.QueryStatus();
                 settings = reader.QuerySettings();
 
                 info = Formatting.FormatReaderInfo(reader, features, settings, status);
+				
             }
             catch (OctaneSdkException err)
             {
-                System.Diagnostics.Debug.WriteLine("DisplaySettings: Octane SDK exception: " + err.Message);
+				System.Diagnostics.Debug.WriteLine("DisplaySettings: Octane SDK exception: " + err.Message);
                 info = "Octane Exception, Not Connected";
             }
             catch (Exception err)
             {
-                System.Diagnostics.Debug.WriteLine("DisplaySettings: Exception: " + err.Message);
+				System.Diagnostics.Debug.WriteLine("DisplaySettings: Exception: " + err.Message);
                 info = "Exception, Not Connected";
             }
             finally
             {
-                Display.UpdateReaderInfo(info);
-                Display.UpdateConnectButton(this);
-            }
+				Display.UpdateReaderInfo(info);
+				Display.UpdateConnectButton(this);
+			}
         }
-        private void CheckConnection()
-        {
-            timer.Enabled = true;
-            timer.Stop();
-            timer.Start();
-            RefreshReaderDisplay();
-        }
+		public void CheckConnection()
+		{
+			timer.Enabled = true;
+			timer.Stop();
+			timer.Start();
+			bool isConnected = false;
+
+			try
+			{
+				Status currentStatus = reader.QueryStatus();
+
+				if (currentStatus.IsConnected)
+				{
+					System.Diagnostics.Debug.WriteLine("RFID READER ALREADY CONNECTED");
+					isConnected = true;
+				}
+				else
+				{
+					System.Diagnostics.Debug.WriteLine("RFID IS NOT CONNECTED, Will attempt to reconnect RFID...");
+					//Connect();
+					isConnected = false;
+				}
+			}
+			catch (Exception err)
+			{
+				System.Diagnostics.Debug.WriteLine("Check Connection error: " + err.Message);
+				isConnected = false;
+			}
+
+			if (!isConnected)
+			{
+				System.Diagnostics.Debug.WriteLine("RFID Check Not Connected");
+				this.RefreshReaderDisplay();
+				this.Connect();
+			}
+		}
 
         private void TimerElapsed(Object sender, System.Timers.ElapsedEventArgs e)
         {
-            CheckConnection();
+			System.Diagnostics.Debug.WriteLine("RFID RECONNECT TIMER LAPSED");
+			CheckConnection();
         }
     }
 }
