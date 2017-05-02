@@ -73,9 +73,12 @@ namespace _45PPC_RFID
         {
             try
             {
-                Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
-                stream.Write(data, 0, data.Length);
-                System.Diagnostics.Debug.WriteLine("TCP Send: " + message);
+				if (stream.CanWrite)
+				{
+					Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
+					stream.Write(data, 0, data.Length);
+					System.Diagnostics.Debug.WriteLine("TCP Send: " + message);
+				}
             }
             catch (ArgumentNullException e)
             {
@@ -105,11 +108,28 @@ namespace _45PPC_RFID
 			tcpTimer.Stop();
 			tcpTimer.Start();
 			System.Diagnostics.Debug.WriteLine("CHECKING TCP SERVER CONNECTION...");
+			//bool recentlyConnected = client.Connected;
+			
+			//System.Diagnostics.Debug.WriteLine("TCP SERVER RECENTLY CONNECTED: " + isConnected);
 
-			bool isConnected = client.Connected;
-			System.Diagnostics.Debug.WriteLine("TCP SERVER CONNECTED: " + isConnected);
+			try
+			{
+				if (stream.CanWrite)
+				{
+					string message = "ping";
+					Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
+					
+					stream.Write(data, 0, data.Length);
+					System.Diagnostics.Debug.WriteLine("TCP Send Test Message: " + message);
+				}
+			}
+			catch(Exception err)
+			{
+				System.Diagnostics.Debug.WriteLine(err.Message);
+			}
 
-			if (isConnected)
+			bool recentlyConnected = client.Connected;
+			if (recentlyConnected)
 			{
 				System.Diagnostics.Debug.WriteLine("TCP SERVER CONNECTED, WILL CHECK AGAIN IN: " + (SolutionConstants.CheckTCPConnectionInterval / 1000) + " seconds");
 			}
