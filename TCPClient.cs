@@ -40,8 +40,9 @@ namespace _45PPC_RFID
 
 			try
             {
-				//client = new TcpClient(address, port);
-				client.Connect(address, port);
+                //client = new TcpClient(address, port);
+                client = new TcpClient();
+                client.Connect(address, port);
 				//new
 				//client.Connect(address, port);
 				connected = client.Connected;
@@ -113,7 +114,7 @@ namespace _45PPC_RFID
 			{
 				if (stream.CanWrite)
 				{
-					string message = "ping";
+					string message = "{\"message\": \"RFID ping\"}";
 					Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
 					
 					stream.Write(data, 0, data.Length);

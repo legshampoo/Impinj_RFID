@@ -1,0 +1,17 @@
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\bin\Release\45PPC_RFID.exe.config
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\bin\Release\45PPC_RFID.exe
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\bin\Release\45PPC_RFID.pdb
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\bin\Release\Impinj.OctaneSdk.dll
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\bin\Release\LLRP.Impinj.dll
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\bin\Release\LLRP.dll
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\bin\Release\Impinj.OctaneSdk.pdb
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\bin\Release\Impinj.OctaneSdk.xml
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\bin\Release\LLRP.Impinj.pdb
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\bin\Release\LLRP.pdb
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\obj\Release\45PPC_RFID.csprojResolveAssemblyReference.cache
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\obj\Release\_45PPC_RFID.Application.resources
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\obj\Release\_45PPC_RFID.Properties.Resources.resources
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\obj\Release\_45PPC_RFID.TagWriter.resources
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\obj\Release\45PPC_RFID.csproj.GenerateResource.Cache
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\obj\Release\45PPC_RFID.exe
+C:\Users\45PPSC\Documents\45pp\Impinj_RFID\obj\Release\45PPC_RFID.pdb

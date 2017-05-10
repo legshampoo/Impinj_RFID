@@ -17,6 +17,7 @@ namespace _45PPC_RFID
         public Reader r = new Reader(SolutionConstants.ReaderHostname);
         public List<TagObject> tagObjects = new List<TagObject>();
         public TCPClient tcpClient;
+        public Socket socket;
         public TagWriter tagWriter = new TagWriter();
 
 		private System.Timers.Timer tcpTimer = new System.Timers.Timer(SolutionConstants.CheckTCPConnectionInterval);
@@ -45,10 +46,11 @@ namespace _45PPC_RFID
 		void Worker_ConnectTCP_DoWork(object sender, DoWorkEventArgs e)
 		{
 			System.Diagnostics.Debug.WriteLine("Background Worker: TCP CONNECT Init");
-			tcpClient = new TCPClient();
-			tcpClient.Connect(IPAddress.Parse(SolutionConstants.server), SolutionConstants.tcpPort);
-			tcpClient.CheckTCPConnection(IPAddress.Parse(SolutionConstants.server), SolutionConstants.tcpPort);
-		}
+            tcpClient = new TCPClient();
+            tcpClient.Connect(IPAddress.Parse(SolutionConstants.server), SolutionConstants.tcpPort);
+            tcpClient.CheckTCPConnection(IPAddress.Parse(SolutionConstants.server), SolutionConstants.tcpPort);
+            //socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        }
 
 		void Worker_ConnectTCP_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
 		{

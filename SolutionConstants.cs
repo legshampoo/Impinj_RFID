@@ -17,7 +17,7 @@ namespace _45PPC_RFID
 		//public const string server = "192.168.0.22"; //"192.168.32.39";
 		public const string server = "192.168.45.122";  //mac mini on Site
         public const int tcpPort = 5550;
-		public const float CheckTCPConnectionInterval = 1000 * 30;
+		public const float CheckTCPConnectionInterval = 1000 * 5;
 
         public static List<string> TagList = new List<string> {
             "1000",
